@@ -36,11 +36,11 @@ def train(pth, imtype, datatype, real_data, Disc, Gen, nc, l, nz, sf):
     num_epochs = 100
 
     # batch sizes
-    batch_size = 8
-    D_batch_size = 8
+    batch_size = 32
+    D_batch_size = 32
     # optimiser params for G and D
-    lrg = 0.0001
-    lrd = 0.0001
+    lrg = 0.0002
+    lrd = 0.0002
     beta1 = 0.9
     beta2 = 0.99
     Lambda = 10
@@ -138,7 +138,7 @@ def train(pth, imtype, datatype, real_data, Disc, Gen, nc, l, nz, sf):
                 optG.step()
 
             # Output training stats & show imgs
-            if i % 25 == 0:
+            if i % 50 == 0:
                 netG.eval()
                 with torch.no_grad():
                     torch.save(netG.state_dict(), pth + '_Gen.pt')
