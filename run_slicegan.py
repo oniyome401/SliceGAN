@@ -56,4 +56,4 @@ netD, netG = networks.slicegan_rc_nets(Project_path, Training, image_type, dk, d
 if Training:
     model.train(Project_path, image_type, data_type, data_path, netD, netG, img_channels, img_size, z_channels, scale_factor)
 else:
-    img, raw, netG = util.test_img(Project_path, image_type, netG(), z_channels, lf=8, periodic=[0, 1, 1])
+    img, raw, netG = util.test_img(Project_path, image_type, netG(), z_channels, lf=10, periodic=[0, 1, 1])
